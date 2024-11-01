@@ -1,0 +1,64 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS bankmanagementsystem;
+USE bankmanagementsystem;
+
+-- Table: signup
+CREATE TABLE signup (
+    formno VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    father_name VARCHAR(50),
+    dob VARCHAR(20) ,
+    gender VARCHAR(10),
+    email VARCHAR(50),
+    marital_status VARCHAR(20),
+    address VARCHAR(100),
+    city VARCHAR(30),
+    pincode INT,
+    state VARCHAR(30)
+);
+
+-- Table: signuptwo
+CREATE TABLE signuptwo (
+    formno VARCHAR(20),
+    religion VARCHAR(20),
+    category VARCHAR(20),
+    income VARCHAR(20),
+    education VARCHAR(30),
+    occupation VARCHAR(30),
+    pan VARCHAR(10) UNIQUE,
+    aadhar VARCHAR(12) UNIQUE,
+    seniorcitizen VARCHAR(10),
+    existingaccount VARCHAR(10),
+    FOREIGN KEY (formno) REFERENCES signup(formno)
+);
+
+-- Table: signupthree
+CREATE TABLE signupthree (
+    formno VARCHAR(20),
+    accountType VARCHAR(20),
+    cardnumber VARCHAR(16) UNIQUE,
+    pin VARCHAR(6),
+    facility VARCHAR(100),
+    FOREIGN KEY (formno) REFERENCES signup(formno)
+);
+
+-- Table: login
+CREATE TABLE login (
+    formno VARCHAR(20),
+    cardnumber VARCHAR(16),
+    pin VARCHAR(6) UNIQUE,
+    FOREIGN KEY (formno) REFERENCES signup(formno),
+    FOREIGN KEY (cardnumber) REFERENCES signupthree(cardnumber)
+);
+
+-- Table: bank
+CREATE TABLE bank (
+    pin VARCHAR(6),
+    date VARCHAR(20),
+    type VARCHAR(20),
+    amount INT,
+    FOREIGN KEY (pin) REFERENCES login(pin)
+);
+
+-- Sample query to view the login table
+SELECT * FROM login;
