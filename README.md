@@ -25,7 +25,7 @@ I have attached the output screenshots below:
 ![Screenshot of the ATM Simulator](ATM-Simulator-System/img/screenshot5.png)
 ![Screenshot of the ATM Simulator](ATM-Simulator-System/img/screenshot6.png)
 ![Screenshot of the ATM Simulator](ATM-Simulator-System/img/screenshot7.png)
-![Screenshot of the ATM Simulator](img/screenshot8.png)
+![Screenshot of the ATM Simulator](iATM-Simulator-System/img/screenshot8.png)
 ![Screenshot of the ATM Simulator](ATM-Simulator-System/img/screenshot9.png)
 ![Screenshot of the ATM Simulator](ATM-Simulator-System/img/screenshot10.png)
 ![Screenshot of the ATM Simulator](ATM-Simulator-System/img/screenshot11.png)
